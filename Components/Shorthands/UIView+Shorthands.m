@@ -8,13 +8,77 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#import "CCMacroses.h"
 #import "UIView+Shorthands.h"
 #import "UIButton+Shorthands.h"
 #import "UILabel+Shorthands.h"
-#import "CCMacroses.h"
+#import "UIImageView+Shorthands.h"
 
 
 @implementation UIView (Shorthands)
+
++ (instancetype)withFrame:(CGRect)frame
+{
+    return [[self alloc] initWithFrame:frame];
+}
+
++ (instancetype)withSubviews:(NSArray<UIView *> *)subviews
+{
+    UIView *view = [UIView new];
+
+    for (UIView *subview in subviews) {
+        [view addSubview:subview];
+    }
+
+    return view;
+}
+
++ (instancetype)withSubviewsBlock:(NSArray<UIView *> *(^)())subviewsBlock
+{
+    NSArray<UIView *> *subviews = nil;
+    if (subviewsBlock) {
+        subviews = subviewsBlock();
+    }
+
+    return [self withSubviews:subviews];
+}
+
+- (UIImageView *)addImageView
+{
+    let imageView = [UIImageView new];
+    [self addSubview:imageView];
+    return imageView;
+}
+
+- (UIImageView *)addImageViewWithImage:(UIImage *)image
+{
+    let imageView = [UIImageView withImage:image];
+    [self addSubview:imageView];
+    return imageView;
+}
+
+- (UITapGestureRecognizer *)addTapGestureRecognizerTo:(UIView *)view withAction:(SEL)action
+{
+    let tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:action];
+    [view addGestureRecognizer:tapRecognizer];
+    return tapRecognizer;
+}
+
+- (UITextField *)addTextFieldWithFont:(UIFont *)font textColor:(UIColor *)color
+{
+    let textField = [UITextField new];
+    textField.font = font;
+    textField.textColor = color;
+    [self addSubview:textField];
+    return textField;
+}
+
+- (void)addSubviews:(NSArray<__kindof UIView *> *)subviews
+{
+    for (UIView *subview in subviews) {
+        [self addSubview:subview];
+    }
+}
 
 - (UIView *)addView
 {

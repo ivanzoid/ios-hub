@@ -44,7 +44,7 @@
 {
     UIStoryboard *storyboard = [self dt_storyboardWithName:name bundle:storyboardBundleOrNil];
 
-    SetAssociatedObjectToObject(storyboard, "name", name);
+    CCSetAssociatedObjectToObject(storyboard, "name", name);
 
     return storyboard;
 }
@@ -52,13 +52,13 @@
 - (__kindof UIViewController *)dt_instantiateViewControllerWithIdentifier:(NSString *)identifier
 {
     UIViewController *viewController = [self dt_instantiateViewControllerWithIdentifier:identifier];
-    SetAssociatedObjectToObject(viewController, "storyboardId", identifier);
+    CCSetAssociatedObjectToObject(viewController, "storyboardId", identifier);
     return viewController;
 }
 
 - (NSString *)dt_name
 {
-    return GetAssociatedObject("name");
+    return CCGetAssociatedObject("name");
 }
 
 @end
@@ -72,7 +72,7 @@
 - (NSURL *)cc_url
 {
     if (self.storyboard) {
-        NSString *storyboardId = GetAssociatedObject("storyboardId");
+        NSString *storyboardId = CCGetAssociatedObject("storyboardId");
         if (storyboardId) {
             return [NSURL URLWithString:[NSString stringWithFormat:@"app:///%@/%@", self.storyboard.dt_name,
                                                                    storyboardId]];

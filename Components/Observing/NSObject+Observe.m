@@ -120,11 +120,11 @@
 
 - (NSMapTable<id, id> *)cc_observers
 {
-    NSMapTable<id, id> *observers = GetAssociatedObject(@selector(cc_observers));
+    NSMapTable<id, id> *observers = CCGetAssociatedObject(@selector(cc_observers));
 
     if (!observers) {
         observers = [NSMapTable weakToStrongObjectsMapTable];
-        SetAssociatedObject(@selector(cc_observers), observers);
+        CCSetAssociatedObject(@selector(cc_observers), observers);
     }
 
     return observers;

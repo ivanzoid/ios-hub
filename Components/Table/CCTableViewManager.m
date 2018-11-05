@@ -1317,10 +1317,10 @@ static CGFloat const kDefaultCellHeight = 60;
 
 - (NSMutableDictionary *)heightCellCache
 {
-    id cellCache = GetAssociatedObject(@selector(heightCellCache));
+    id cellCache = CCGetAssociatedObject(@selector(heightCellCache));
     if (!cellCache) {
         cellCache = [NSMutableDictionary new];
-        SetAssociatedObject(@selector(heightCellCache), cellCache);
+        CCSetAssociatedObject(@selector(heightCellCache), cellCache);
     }
     return cellCache;
 }

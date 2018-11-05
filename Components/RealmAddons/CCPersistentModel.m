@@ -119,14 +119,14 @@ static NSString *CCDefaultPropertyGetter(id self, SEL _cmd)
 {
     NSString *propertyName = CCPropertyNameFromGetter(NSStringFromSelector(_cmd));
     NSString *ivarName = CCIvarNameFromProperty(propertyName);
-    return GetAssociatedObjectFromObject(self, NSSelectorFromString(ivarName));;
+    return CCGetAssociatedObjectFromObject(self, NSSelectorFromString(ivarName));;
 }
 
 static void CCDefaultPropertySetter(id self, SEL _cmd, NSString *newName)
 {
     NSString *propertyName = CCPropertyNameFromSetter(NSStringFromSelector(_cmd));
     NSString *ivarName = CCIvarNameFromProperty(propertyName);
-    SetAssociatedObjectToObject(self, NSSelectorFromString(ivarName), newName);
+    CCSetAssociatedObjectToObject(self, NSSelectorFromString(ivarName), newName);
 }
 
 NSString *CCDataPropertyNameFromName(NSString *propertyName)
@@ -202,7 +202,7 @@ static id CCObjectPropertyGetter(id self, SEL _cmd)
     id valueFromStorage = getterImpl(self, getterSelector);
 
     NSUInteger valueFromStorageHash = [valueFromStorage hash];
-    CCPersistentModelCachedValue *cachedValue = GetAssociatedObjectFromObject(self, key);
+    CCPersistentModelCachedValue *cachedValue = CCGetAssociatedObjectFromObject(self, key);
 
     if (!cachedValue || [cachedValue hash] != valueFromStorageHash) {
 
@@ -214,7 +214,7 @@ static id CCObjectPropertyGetter(id self, SEL _cmd)
         cachedValue = [[CCPersistentModelCachedValue alloc]
                 initWithDeserializedValue:unwrappedValue serializedValueHash:valueFromStorageHash];
 
-        SetAssociatedObject(key, cachedValue);
+        CCSetAssociatedObject(key, cachedValue);
     }
     return cachedValue.deserializedValue;
 }
@@ -241,7 +241,7 @@ static void CCObjectPropertySetter(id self, SEL _cmd, id newObject)
     CCPersistentModelCachedValue *cachedValue = [[CCPersistentModelCachedValue alloc]
             initWithDeserializedValue:newObject serializedValueHash:[serializedValue hash]];
 
-    SetAssociatedObject(key, cachedValue);
+    CCSetAssociatedObject(key, cachedValue);
 }
 
 //-------------------------------------------------------------------------------------------

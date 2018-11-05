@@ -13,6 +13,20 @@
 
 @interface UIView (Shorthands)
 
++ (instancetype)withFrame:(CGRect)frame;
+
++ (instancetype)withSubviews:(NSArray<UIView *> *)subviews;
++ (instancetype)withSubviewsBlock:(NSArray<UIView *> *(^)())subviewsBlock;
+
+- (UIImageView *)addImageView;
+- (UIImageView *)addImageViewWithImage:(UIImage *)image;
+
+- (UITextField *)addTextFieldWithFont:(UIFont *)font textColor:(UIColor *)color;
+
+- (UITapGestureRecognizer *)addTapGestureRecognizerTo:(UIView *)view withAction:(SEL)action;
+
+- (void)addSubviews:(NSArray<__kindof UIView *> *)subviews;
+
 - (UIView *)addView;
 - (UIView *)addViewWithBgColor:(UIColor *)color;
 

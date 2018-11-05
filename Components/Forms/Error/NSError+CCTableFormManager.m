@@ -61,12 +61,12 @@ static const char kRemainingErrorsKey;
 
 - (void)setRemainingErrors:(NSArray *)remainingErrors
 {
-    SetAssociatedObject(&kRemainingErrorsKey, remainingErrors);
+    CCSetAssociatedObject(&kRemainingErrorsKey, remainingErrors);
 }
 
 - (NSArray *)remainingErrors
 {
-    return GetAssociatedObject(&kRemainingErrorsKey);
+    return CCGetAssociatedObject(&kRemainingErrorsKey);
 }
 
 - (NSArray<NSError *> *)allErrors

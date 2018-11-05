@@ -37,10 +37,10 @@ static const char *kCCEnvironmentStorageKey = "_storage";
 + (CCEnvironmentStorage *)storage
 {
     @synchronized (self) {
-        CCEnvironmentStorage *result = GetAssociatedObjectFromObject(self, kCCEnvironmentStorageKey);
+        CCEnvironmentStorage *result = CCGetAssociatedObjectFromObject(self, kCCEnvironmentStorageKey);
         if (!result) {
             result = [[CCEnvironmentStorage alloc] initWithEnvironmentClass:self];
-            SetAssociatedObjectToObject(self, kCCEnvironmentStorageKey, result);
+            CCSetAssociatedObjectToObject(self, kCCEnvironmentStorageKey, result);
         }
         return result;
     }

@@ -120,7 +120,7 @@ static NSInteger gObserverDeallocCount = 0;
         callCount += 1;
     }];
 
-    SafetyCallAfter(0.2, ^{
+    CCSafeCallOnMainAfter(0.2, ^{
         [e fulfill];
     });
 
@@ -147,7 +147,7 @@ static NSInteger gObserverDeallocCount = 0;
     });
     
     XCTestExpectation *e = [self expectationWithDescription:@""];
-    SafetyCallAfter(0.1, ^{
+    CCSafeCallOnMainAfter(0.1, ^{
         [e fulfill];
     });
 

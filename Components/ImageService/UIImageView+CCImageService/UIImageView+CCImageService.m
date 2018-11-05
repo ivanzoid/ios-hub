@@ -180,12 +180,12 @@ static const void *kImageKey = &kImageKey;
 
 - (void)setCc_imageUrl:(NSURL *)url
 {
-    SetAssociatedObject(kImageKey, url);
+    CCSetAssociatedObject(kImageKey, url);
 }
 
 - (NSURL *)cc_imageUrl
 {
-    return GetAssociatedObject(kImageKey);
+    return CCGetAssociatedObject(kImageKey);
 }
 
 @end

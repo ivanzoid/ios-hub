@@ -9,6 +9,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "UIView+CCAnimate.h"
+#import "CCMacroses.h"
 
 static CGFloat const kDefaultAnimationDuration = 0.5;
 

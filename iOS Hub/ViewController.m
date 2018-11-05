@@ -31,12 +31,12 @@
     }];
     
     self.value = @1;
-    
-    SafetyCallAfter(1, ^{
+
+    CCSafeCallOnMainAfter(1, ^{
         self.value = @2;
     });
-    
-    SafetyCallAfter(2, ^{
+
+    CCSafeCallOnMainAfter(2, ^{
         self.value = @3;
     });
 }

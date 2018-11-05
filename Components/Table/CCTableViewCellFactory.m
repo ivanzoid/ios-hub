@@ -86,10 +86,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSCache *)nibsForTable:(UITableView *)tableView
 {
     static const char *key = "regisered_xibs";
-    NSCache *cache = GetAssociatedObjectFromObject(tableView, key);
+    NSCache *cache = CCGetAssociatedObjectFromObject(tableView, key);
     if (!cache) {
         cache = [NSCache new];
-        SetAssociatedObjectToObject(tableView, key, cache);
+        CCSetAssociatedObjectToObject(tableView, key, cache);
     }
     return cache;
 }

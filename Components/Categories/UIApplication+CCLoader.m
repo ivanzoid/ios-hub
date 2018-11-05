@@ -9,6 +9,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "UIApplication+CCLoader.h"
+#import "CCMacroses.h"
 
 
 @implementation UIApplication (CCLoader)

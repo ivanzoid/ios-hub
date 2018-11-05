@@ -10,6 +10,7 @@
 
 #import "UIColor+CCHexString.h"
 #import "UIColor+Components.h"
+#import "CCMacroses.h"
 
 
 @implementation UIColor (CCHexString)

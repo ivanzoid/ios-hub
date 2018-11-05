@@ -139,7 +139,7 @@ static void CCViperPrepareForSegueSender(id self, SEL selector, UIStoryboardSegu
 
 - (id)moduleInput
 {
-    id result = GetAssociatedObject(@selector(moduleInput));
+    id result = CCGetAssociatedObject(@selector(moduleInput));
     if (!result && [self respondsToSelector:@selector(output)]) {
         result = [(id<CCTraditionalViperViewWithOutput>)self output];
     }
@@ -153,7 +153,7 @@ static void CCViperPrepareForSegueSender(id self, SEL selector, UIStoryboardSegu
 
 - (void)setModuleInput:(id<CCGeneralModuleInput>)moduleInput
 {
-    SetAssociatedObject(@selector(moduleInput), moduleInput);
+    CCSetAssociatedObject(@selector(moduleInput), moduleInput);
 }
 
 //-------------------------------------------------------------------------------------------

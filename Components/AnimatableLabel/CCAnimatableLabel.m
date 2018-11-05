@@ -10,6 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "CCAnimatableLabel.h"
+#import "CCMacroses.h"
 #import <CoreText/CoreText.h>
 
 
@@ -117,7 +118,7 @@
 
             [CATransaction commit];
 
-            SafetyCall(completion);
+            CCSafeCall(completion);
         }];
 
         self.fontSize = fontSize;
@@ -142,7 +143,7 @@
 
             [CATransaction commit];
 
-            SafetyCall(completion);
+            CCSafeCall(completion);
         }];
 
         self.fontSize = fontSize;

@@ -17,13 +17,13 @@
 {
     NSOperatingSystemVersion ios9 = (NSOperatingSystemVersion){9, 0, 0};
     if (![[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:ios9]) {
-        NSNumber *isUnregisterListening = GetAssociatedObjectFromObject(self, "unregister_notifications");
+        NSNumber *isUnregisterListening = CCGetAssociatedObjectFromObject(self, "unregister_notifications");
         if (!isUnregisterListening) {
             __weak __typeof(self) weakSelf = self;
             [self setDeallocNotificationWithKey:"CCNotificationUtils" andBlock:^{
                 [weakSelf unregisterForNotifications];
             }];
-            SetAssociatedObjectToObject(self, "unregister_notifications", @YES);
+            CCSetAssociatedObjectToObject(self, "unregister_notifications", @YES);
         }
     }
 }

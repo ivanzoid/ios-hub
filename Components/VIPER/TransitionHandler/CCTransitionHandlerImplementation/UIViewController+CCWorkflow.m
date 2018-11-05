@@ -20,7 +20,7 @@ static const char *kWorkflowKey;
 
 - (void)setWorkflow:(id<CCWorkflow>)workflow
 {
-    SetAssociatedObject(&kWorkflowKey, workflow);
+    CCSetAssociatedObject(&kWorkflowKey, workflow);
     
     for (UIViewController *child in [self childViewControllers]) {
         child.workflow = workflow;
@@ -29,7 +29,7 @@ static const char *kWorkflowKey;
 
 - (id<CCWorkflow>)workflow
 {
-    return GetAssociatedObject(&kWorkflowKey);
+    return CCGetAssociatedObject(&kWorkflowKey);
 }
 
 @end
