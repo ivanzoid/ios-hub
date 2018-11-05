@@ -1,0 +1,15 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Fernwood
+//  Created by ivan at 18.06.2018.
+//
+//  Copyright 2018 Loud & Clear Pty Ltd Pty Ltd
+//  All Rights Reserved.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+@interface NSArray (CCComponentsJoined)
+
+- (NSString *)cc_componentsJoinedByStringSafeRecursive:(NSString *)symbol;
+
+@end

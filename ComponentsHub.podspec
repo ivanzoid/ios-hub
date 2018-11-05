@@ -26,6 +26,12 @@ Pod::Spec.new do |s|
 
   # Categories dir
 
+  s.subspec 'AnimatableLabel' do |subspec|
+      subspec.source_files = 'Components/AnimatableLabel/**/*.{h,m}'
+      subspec.dependency 'ComponentsHub/Macroses'
+      subspec.dependency 'ComponentsHub/ManualLayout'
+  end
+
   s.subspec 'BaseObjects' do |subspec|
       subspec.source_files = 'Components/BaseObjects/**/*.{h,m}'
       subspec.dependency 'ComponentsHub/Macroses'
@@ -42,14 +48,6 @@ Pod::Spec.new do |s|
       subspec.source_files = 'Components/Categories/**/*.{h,m}'
       subspec.dependency 'ComponentsHub/Macroses'
       subspec.dependency 'ComponentsHub/ManualLayout'
-  end
-
-  s.subspec 'UIColor+Hex' do |subspec|
-      subspec.source_files = 'Components/Categories/UIColor+Hex.{h,m}'
-  end
-
-  s.subspec 'NSString+SHA1' do |subspec|
-      subspec.source_files = 'Components/Categories/NSString+SHA1.{h,m}'
   end
 
   s.subspec 'DispatchUtils' do |subspec|
@@ -77,18 +75,18 @@ Pod::Spec.new do |s|
       subspec.dependency 'ComponentsHub/Macroses'
   end
 
-    s.subspec 'EnvironmentUI' do |subspec|
-        subspec.source_files   = 'Components/EnvironmentUI/**/*.{h,m}'
-        subspec.dependency 'ComponentsHub/Environment'
-        subspec.dependency 'ComponentsHub/Forms'
-        subspec.dependency 'ComponentsHub/ManualLayout'
-        subspec.dependency 'ComponentsHub/NotificationUtils'
-        subspec.dependency 'ComponentsHub/Observation'
-        subspec.dependency 'ComponentsHub/StatusBarHUD'
-        subspec.dependency 'PureLayout'
-        subspec.dependency 'TPKeyboardAvoiding'
-        subspec.dependency 'Typhoon/IntrospectionUtils'
-    end
+  s.subspec 'EnvironmentUI' do |subspec|
+      subspec.source_files   = 'Components/EnvironmentUI/**/*.{h,m}'
+      subspec.dependency 'ComponentsHub/Environment'
+      subspec.dependency 'ComponentsHub/Forms'
+      subspec.dependency 'ComponentsHub/ManualLayout'
+      subspec.dependency 'ComponentsHub/NotificationUtils'
+      subspec.dependency 'ComponentsHub/Observation'
+      subspec.dependency 'ComponentsHub/StatusBarHUD'
+      subspec.dependency 'PureLayout'
+      subspec.dependency 'TPKeyboardAvoiding'
+      subspec.dependency 'Typhoon/IntrospectionUtils'
+  end
 
   s.subspec 'ImageService-Common' do |subspec|
       subspec.source_files   = 'Components/ImageService/CCImageService.h', 'Components/ImageService/UIImageView+CCImageService/*.{h,m}'
@@ -118,6 +116,11 @@ Pod::Spec.new do |s|
       subspec.dependency 'ComponentsHub/Macroses'
   end
 
+  s.subspec 'ListManager' do |subspec|
+      subspec.source_files   = 'Components/ListManager/**/*.{h,m}'
+      subspec.dependency 'ComponentsHub/Macroses'
+  end
+
   s.subspec 'Logging' do |subspec|
       subspec.source_files   = 'Components/Logging/**/*.{h,m}'
       subspec.dependency 'BugfenderSDK/ObjC', '~> 1.4'
@@ -127,6 +130,10 @@ Pod::Spec.new do |s|
   s.subspec 'Macroses' do |subspec|
       subspec.source_files   = 'Components/Macroses/**/*.{h,m}'
       subspec.dependency 'libextobjc/EXTScope'
+  end
+
+  s.subspec 'MultiDelegate' do |subspec|
+      subspec.source_files   = 'Components/MultiDelegate/**/*.{h,m}'
   end
 
   s.subspec 'Math' do |subspec|
@@ -148,6 +155,10 @@ Pod::Spec.new do |s|
   s.subspec 'NetworkAddons' do |subspec|
       subspec.source_files   = 'Components/NetworkAddons/**/*.{h,m}'
       subspec.dependency 'TyphoonRestClient'
+  end
+
+  s.subspec 'NSString+SHA1' do |subspec|
+      subspec.source_files = 'Components/Categories/NSString+SHA1.{h,m}'
   end
 
   s.subspec 'NotificationUtils' do |subspec|
@@ -206,7 +217,11 @@ Pod::Spec.new do |s|
       subspec.source_files   = 'Components/TestUtils/**/*.{h,m}'
       subspec.framework = 'XCTest'
   end
-  
+
+  s.subspec 'TextField' do |subspec|
+      subspec.source_files   = 'Components/TextField/**/*.{h,m}'
+  end
+
   s.subspec 'TopmostViewController' do |subspec|
       subspec.source_files   = 'Components/TopmostViewController/**/*.{h,m}'
   end
@@ -229,6 +244,10 @@ Pod::Spec.new do |s|
       subspec.dependency 'Typhoon'
   end
 
+  s.subspec 'UIColor+Hex' do |subspec|
+      subspec.source_files = 'Components/Categories/UIColor+Hex.{h,m}'
+  end
+
   s.subspec 'VIPER' do |subspec|
       subspec.source_files   = 'Components/VIPER/**/*.{h,m}'
       subspec.dependency 'Typhoon'
@@ -239,5 +258,4 @@ Pod::Spec.new do |s|
       subspec.dependency 'ComponentsHub/MutableCollections'
       subspec.dependency 'ComponentsHub/MapCollections'
   end
-
 end

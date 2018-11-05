@@ -1,0 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  CopyObjectData
+//  Created by ivan at 7.03.2018.
+//
+//  Copyright 2018 Ivan Zezyulya Pty Ltd
+//  All Rights Reserved.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#import <UIKit/UIKit.h>
+
+@interface NSObject (CCPropertiesNames)
+
+- (NSArray<NSString *> *)cc_propertiesNames;
+
+@end

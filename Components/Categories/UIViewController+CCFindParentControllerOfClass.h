@@ -1,0 +1,15 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Fernwood
+//  Created by ivan at 4.05.2018.
+//
+//  Copyright 2018 Loud & Clear Pty Ltd Pty Ltd
+//  All Rights Reserved.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+@interface UIViewController (CCFindParentControllerOfClass)
+
+- (instancetype)cc_findParentControllerOfClass:(Class)cls;
+
+@end

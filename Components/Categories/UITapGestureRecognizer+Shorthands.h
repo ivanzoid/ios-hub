@@ -1,0 +1,15 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Fernwood
+//  Created by ivan at 30.11.2017.
+//
+//  Copyright 2017 Loud & Clear Pty Ltd Pty Ltd
+//  All Rights Reserved.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+@interface UITapGestureRecognizer (Shorthands)
+
++ (nonnull instancetype)withTarget:(nullable id)target action:(nullable SEL)action;
+
+@end
