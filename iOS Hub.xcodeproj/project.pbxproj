@@ -47,9 +47,7 @@
 		2CD634271E16668F00A2BB15 /* Config.staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.staging.plist; sourceTree = "<group>"; };
 		2DBA19C33C3C3F6910E65677 /* CCFormValidationEmailTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFormValidationEmailTests.m; sourceTree = "<group>"; };
 		2DBA1AA854B22D32382F824D /* CCObjectObserverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CCObjectObserverTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		31821257F80A7C222EC52DCD /* CCMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMath.m; sourceTree = "<group>"; };
 		31821B2F840857DC85C7B958 /* CCFormValidationAndTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFormValidationAndTests.m; sourceTree = "<group>"; };
-		31821B4A55DB374C52C584BC /* CCStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStackView.m; sourceTree = "<group>"; };
 		31821D286980132DB10E0BD4 /* CCMacrosesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMacrosesTest.m; sourceTree = "<group>"; };
 		446956A7F9FE359608775CB8 /* Pods-iOS HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS HubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS HubTests/Pods-iOS HubTests.release.xcconfig"; sourceTree = "<group>"; };
 		900BB96B6BF13BEBEA951A07 /* libPods-iOS Hub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS Hub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,8 +97,6 @@
 		2C5C40251FC411F000D66BBB /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				31821B4A55DB374C52C584BC /* CCStackView.m */,
-				31821257F80A7C222EC52DCD /* CCMath.m */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -290,7 +286,6 @@
 				FA3486601DDF0B8600B02A01 /* Sources */,
 				FA3486611DDF0B8600B02A01 /* Frameworks */,
 				FA3486621DDF0B8600B02A01 /* Resources */,
-				C0C48CE965D813D130F3C7DE /* [CP] Embed Pods Frameworks */,
 				FBCBC52EC21616B3A53C5887 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -310,8 +305,6 @@
 				FA3486791DDF0B8600B02A01 /* Sources */,
 				FA34867A1DDF0B8600B02A01 /* Frameworks */,
 				FA34867B1DDF0B8600B02A01 /* Resources */,
-				E7581AA0D92E1A346A8F4D34 /* [CP] Embed Pods Frameworks */,
-				2AD60321467C538315AED5B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -391,21 +384,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AD60321467C538315AED5B7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS HubTests/Pods-iOS HubTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		73B5DCAE88CCCC77A50298B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,36 +400,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0C48CE965D813D130F3C7DE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Hub/Pods-iOS Hub-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7581AA0D92E1A346A8F4D34 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS HubTests/Pods-iOS HubTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F1E5BEE5AEC257D9BA9527C3 /* [CP] Check Pods Manifest.lock */ = {
@@ -479,12 +427,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOS Hub/Pods-iOS Hub-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/ComponentsHub/CCTableViewManager.bundle,
+				"${PODS_CONFIGURATION_BUILD_DIR}/ComponentsHub/CCTableViewManager.bundle",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CCTableViewManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
