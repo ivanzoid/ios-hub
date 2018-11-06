@@ -9,7 +9,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "EXTScope.h"
+#import <libextobjc/EXTScope.h>
 #import "CCLogger.h"
 #import "CCSingleton.h"
 #import "CCWarningMute.h"
