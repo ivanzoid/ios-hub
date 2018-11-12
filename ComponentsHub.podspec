@@ -48,6 +48,7 @@ Pod::Spec.new do |s|
       subspec.source_files = 'Components/Categories/**/*.{h,m}'
       subspec.dependency 'ComponentsHub/Macroses'
       subspec.dependency 'ComponentsHub/ManualLayout'
+      subspec.dependency 'ComponentsHub/MutableCollections'
   end
 
   s.subspec 'DispatchUtils' do |subspec|
