@@ -9,7 +9,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "NSObject+CCPropertiesNames.h"
-
+#import "CCMacroses.h"
 
 @implementation NSObject (CCPropertiesNames)
 

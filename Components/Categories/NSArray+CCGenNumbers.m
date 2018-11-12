@@ -9,7 +9,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "NSArray+CCGenNumbers.h"
-
+#import "CCMacroses.h"
 
 @implementation NSArray (CCGenNumbers)
 

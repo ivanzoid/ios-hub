@@ -10,6 +10,7 @@
 
 #import "NSObject+CCMerge.h"
 #import "NSObject+CCPropertiesNames.h"
+#import "CCMacroses.h"
 
 
 @implementation NSObject (CCMerge)

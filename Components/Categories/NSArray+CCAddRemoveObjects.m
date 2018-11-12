@@ -10,6 +10,7 @@
 
 #import <ComponentsHub/CCMutableCollections.h>
 #import "NSArray+CCAddRemoveObjects.h"
+#import "CCMacroses.h"
 
 
 @implementation NSArray (CCAddRemoveObjects)

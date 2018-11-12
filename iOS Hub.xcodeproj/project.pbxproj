@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C44C1EE1F0651670028396F /* CCMacrosesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 31821D286980132DB10E0BD4 /* CCMacrosesTest.m */; };
+		2CC5C2EF21999FBE00A216F4 /* Components in Resources */ = {isa = PBXBuildFile; fileRef = 2CC5C2EE21999FBE00A216F4 /* Components */; };
 		2CD634281E16668F00A2BB15 /* CCEnvironmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD634241E16668F00A2BB15 /* CCEnvironmentTests.m */; };
 		2CD634291E16668F00A2BB15 /* Config.production.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CD634261E16668F00A2BB15 /* Config.production.plist */; };
 		2CD6342A1E16668F00A2BB15 /* Config.staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CD634271E16668F00A2BB15 /* Config.staging.plist */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2C2E96FE3DB2ACE797D0A8A2 /* Pods-iOS Hub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Hub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Hub/Pods-iOS Hub.debug.xcconfig"; sourceTree = "<group>"; };
+		2CC5C2EE21999FBE00A216F4 /* Components */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Components; sourceTree = SOURCE_ROOT; };
 		2CD634241E16668F00A2BB15 /* CCEnvironmentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEnvironmentTests.m; sourceTree = "<group>"; };
 		2CD634261E16668F00A2BB15 /* Config.production.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.production.plist; sourceTree = "<group>"; };
 		2CD634271E16668F00A2BB15 /* Config.staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.staging.plist; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		FA3486661DDF0B8600B02A01 /* iOS Hub */ = {
 			isa = PBXGroup;
 			children = (
+				2CC5C2EE21999FBE00A216F4 /* Components */,
 				FA34866A1DDF0B8600B02A01 /* AppDelegate.h */,
 				FA34866B1DDF0B8600B02A01 /* AppDelegate.m */,
 				FA34866D1DDF0B8600B02A01 /* ViewController.h */,
@@ -362,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC5C2EF21999FBE00A216F4 /* Components in Resources */,
 				FA0199C41DDF279000364871 /* Podfile in Resources */,
 				FA3486771DDF0B8600B02A01 /* LaunchScreen.storyboard in Resources */,
 				FA3486741DDF0B8600B02A01 /* Assets.xcassets in Resources */,

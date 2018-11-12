@@ -13,6 +13,7 @@
 #import "CCListManager.h"
 #import "CCListManager+ForSubclasses.h"
 #import "CCMultiDelegate.h"
+#import "CCMacroses.h"
 
 
 @implementation CCListManager

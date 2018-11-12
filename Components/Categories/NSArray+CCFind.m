@@ -1,18 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  Fernwood
-//  Created by ivan at 18.06.2018.
+//  Created by ivan at 20.06.2018.
 //
 //  Copyright 2018 Loud & Clear Pty Ltd Pty Ltd
 //  All Rights Reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "NSArray+CCComponentsJoined.h"
-#import "NSArray+CCForEach.h"
-#import "CCMacroses.h"
+#import "NSArray+CCFind.h"
 
-@implementation NSArray (CCComponentsJoined)
+
+@implementation NSArray (CCFind)
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
@@ -22,23 +21,20 @@
 #pragma mark - Interface Methods
 //-------------------------------------------------------------------------------------------
 
-- (NSString *)cc_componentsJoinedByStringSafeRecursive:(NSString *)symbol
+- (id)cc_find:(BOOL(^)(id object))compareBlock
 {
-    let strings = [NSMutableArray<NSString *> new];
+    if (!compareBlock) {
+        return nil;
+    }
 
-    [self cc_forEach:^(id object) {
-        if ([object isKindOfClass:NSString.class]) {
-            [strings addObject:object];
+    for (id object in self) {
+        if (compareBlock(object)) {
+            return object;
         }
-        else if ([object isKindOfClass:[NSArray class]]) {
-            let str = [object cc_componentsJoinedByStringSafeRecursive:symbol];
-            [strings addObject:str];
-        }
-    }];
+    }
 
-    return [strings componentsJoinedByString:symbol];
+    return nil;
 }
-
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Overridden Methods

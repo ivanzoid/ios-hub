@@ -1,18 +1,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  Fernwood
-//  Created by ivan at 18.06.2018.
+//  Created by ivan at 14.03.2018.
 //
 //  Copyright 2018 Loud & Clear Pty Ltd Pty Ltd
 //  All Rights Reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#import "NSArray+CCComponentsJoined.h"
-#import "NSArray+CCForEach.h"
+#import <ComponentsHub/NSObject+ChangeValueForKey.h>
+#import "UIViewController+CCTabBarController.h"
+#import "CCTabBarController.h"
 #import "CCMacroses.h"
+#import "CCWeakObjectContainer.h"
 
-@implementation NSArray (CCComponentsJoined)
+
+@implementation UIViewController (CCTabBarController)
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
@@ -22,23 +25,17 @@
 #pragma mark - Interface Methods
 //-------------------------------------------------------------------------------------------
 
-- (NSString *)cc_componentsJoinedByStringSafeRecursive:(NSString *)symbol
+- (CCTabBarController *)cc_tabBarController
 {
-    let strings = [NSMutableArray<NSString *> new];
-
-    [self cc_forEach:^(id object) {
-        if ([object isKindOfClass:NSString.class]) {
-            [strings addObject:object];
-        }
-        else if ([object isKindOfClass:[NSArray class]]) {
-            let str = [object cc_componentsJoinedByStringSafeRecursive:symbol];
-            [strings addObject:str];
-        }
-    }];
-
-    return [strings componentsJoinedByString:symbol];
+    return CCGetAssociatedObjectWeak(@selector(cc_tabBarController));
 }
 
+- (void)setCc_tabBarController:(CCTabBarController *)cc_tabBarController
+{
+    [self cc_changeValueForKey:CCSelectorToString(cc_tabBarController) block:^{
+        CCSetAssociatedObjectWeak(@selector(cc_tabBarController), cc_tabBarController);
+    }];
+}
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Overridden Methods

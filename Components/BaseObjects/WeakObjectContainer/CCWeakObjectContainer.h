@@ -1,0 +1,18 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Fernwood
+//  Created by ivan at 8.03.2018.
+//
+//  Copyright 2018 Loud & Clear Pty Ltd Pty Ltd
+//  All Rights Reserved.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+@interface CCWeakObjectContainer : NSObject
+
+@property (nonatomic, weak) id object;
+
++ (instancetype)withObject:(id)object;
+
+@end

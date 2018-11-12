@@ -13,6 +13,7 @@
 #import "CCAnimatableLabel.h"
 #import "CCNotificationUtils.h"
 #import "NSObject+Observe.h"
+#import "CCMacroses.h"
 
 
 @implementation CCTextField {

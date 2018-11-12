@@ -9,7 +9,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "NSArray+CCFindClosestNumber.h"
-
+#import "CCMacroses.h"
 
 @implementation NSArray (CCFindClosestNumber)
 

@@ -14,6 +14,7 @@
 #import "CCSingleton.h"
 #import "CCWarningMute.h"
 #import "CCProperty.h"
+#import "CCWeakObjectContainer.h"
 
 #define let __auto_type const
 #define var __auto_type
@@ -37,6 +38,9 @@
 #define CCSetAssociatedObjectToObject(object, key, value) objc_setAssociatedObject(object, key, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 #define CCGetAssociatedObjectFromObject(object, key) objc_getAssociatedObject(object, key)
 
+#define CCSetAssociatedObjectWeak(key, value)  objc_setAssociatedObject(self, key, [CCWeakObjectContainer withObject:(value)], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+#define CCGetAssociatedObjectWeak(key) [(CCWeakObjectContainer *)objc_getAssociatedObject(self, key) object]
+
 #define CCNSValueFromPrimitive(primitive) ([NSValue value:&primitive withObjCType:@encode(typeof(primitive))])
 
 #define CCCMTime(seconds) CMTimeMakeWithSeconds(seconds, NSEC_PER_SEC)
@@ -47,6 +51,25 @@
 #define CCIOSVersionLessThanOrEqualTo(version)     ([UIDevice.currentDevice.systemVersion compare:@ #version options:NSNumericSearch] != NSOrderedDescending)
 
 #define CCSetPointer(pointer, ...) if ((pointer)) {*pointer = __VA_ARGS__;}
+
+NS_INLINE BOOL CCObjectIsKindOfClassOrNil(id obj, Class cls)
+{
+    if (!obj) {
+        return YES;
+    }
+    return [obj isKindOfClass:cls];
+}
+
+#define CCCast(object, type) \
+    (CCObjectIsKindOfClassOrNil((object), [type class]) ? \
+     (type *)(object) : \
+     (type *) ^() { NSAssert(NO, @#object @" is not kind of class " @#type); return (type *) nil; }())
+
+#define CCCastSafe(object, type) \
+    (CCObjectIsKindOfClassOrNil((object), [type class]) ? \
+     (type *)(object) : \
+     (type *) nil)
+
 
 // Deprecated:
 #define CMTime(seconds) CMTimeMakeWithSeconds(seconds, NSEC_PER_SEC) __deprecated_msg("Use `CCCMTime` instead.");

@@ -1,0 +1,15 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Fernwood
+//  Created by ivan at 20.06.2018.
+//
+//  Copyright 2018 Loud & Clear Pty Ltd Pty Ltd
+//  All Rights Reserved.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+@interface NSArray<ObjectType> (CCFind)
+
+- (ObjectType)cc_find:(BOOL(^)(ObjectType object))compareBlock;
+
+@end

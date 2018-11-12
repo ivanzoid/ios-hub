@@ -9,7 +9,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "NSDate+CCDateWithoutTime.h"
-
+#import "CCMacroses.h"
 
 @implementation NSDate (CCDateWithoutTime)
 
