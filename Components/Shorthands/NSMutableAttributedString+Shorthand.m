@@ -9,7 +9,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#import <NSAttributedString+CCLFormat/NSAttributedString+CCLFormat.h>
+#import <NSAttributedString_CCLFormat/NSAttributedString+CCLFormat.h>
 #import "NSMutableAttributedString+Shorthand.h"
 
 
