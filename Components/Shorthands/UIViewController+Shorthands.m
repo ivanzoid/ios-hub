@@ -46,6 +46,7 @@
 - (UILabel *)addLabelWithFont:(UIFont *)font color:(UIColor *)color
 {
     let label = [UILabel withFont:font color:color];
+    [self.view addSubview:label];
     return label;
 }
 
